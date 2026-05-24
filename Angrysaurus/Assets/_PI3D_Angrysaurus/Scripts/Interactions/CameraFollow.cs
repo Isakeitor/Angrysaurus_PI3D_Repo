@@ -9,11 +9,13 @@ public class CameraFollow : MonoBehaviour
     [Header("Follow")]
     [SerializeField] float distance = 10f;
     [SerializeField] float height = 8f;
-    [SerializeField] float smoothSpeed = 10f;
+    [SerializeField] float followSmoothness = 10f;
 
     [Header("Rotation")]
-    [SerializeField] float rotationSpeed = 120f;
+    [SerializeField] float mouseSensitivity = 120f;
+    [SerializeField] float rotationSmoothness = 10f;
 
+    float targetYaw;
     float currentYaw;
 
     void LateUpdate()
@@ -30,8 +32,16 @@ public class CameraFollow : MonoBehaviour
         float mouseX =
             Mouse.current.delta.ReadValue().x;
 
-        currentYaw +=
-            mouseX * rotationSpeed * Time.deltaTime;
+        // ROTACIÓN OBJETIVO
+        targetYaw +=
+            mouseX * mouseSensitivity * Time.deltaTime;
+
+        // SUAVIZADO ROTACIÓN
+        currentYaw = Mathf.Lerp(
+            currentYaw,
+            targetYaw,
+            rotationSmoothness * Time.deltaTime
+        );
     }
 
     void FollowTarget()
@@ -47,12 +57,15 @@ public class CameraFollow : MonoBehaviour
         Vector3 targetPosition =
             target.position + offset;
 
+        // SUAVIZADO POSICIÓN
         transform.position = Vector3.Lerp(
             transform.position,
             targetPosition,
-            smoothSpeed * Time.deltaTime
+            followSmoothness * Time.deltaTime
         );
 
-        transform.LookAt(target.position + Vector3.up * 1.5f);
+        transform.LookAt(
+            target.position + Vector3.up * 1.5f
+        );
     }
 }
