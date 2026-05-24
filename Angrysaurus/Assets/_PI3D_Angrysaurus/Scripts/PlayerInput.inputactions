@@ -15,18 +15,18 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Aim",
+                    "name": "Shoot",
                     "type": "Button",
-                    "id": "e3998361-7f01-4545-bae4-2af783af35c8",
+                    "id": "f23d8796-e97b-4368-9fce-c4309fe7785b",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Shoot",
+                    "name": "Interact",
                     "type": "Button",
-                    "id": "f23d8796-e97b-4368-9fce-c4309fe7785b",
+                    "id": "f4e613a4-0fce-4ff0-890b-3c8e1665d004",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -102,28 +102,6 @@
                 },
                 {
                     "name": "",
-                    "id": "f0bc910c-1a48-4981-9b43-668f9a14807c",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Aim",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c83707ea-554d-475d-98f4-ac8b3865cd3d",
-                    "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Aim",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "de85e102-2812-4ca7-a316-d0f1925e894b",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
@@ -141,6 +119,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e51d1050-bc9e-498f-99b6-90219d286fc1",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

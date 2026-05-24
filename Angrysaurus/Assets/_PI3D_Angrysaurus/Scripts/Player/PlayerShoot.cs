@@ -1,71 +1,33 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
 
 public class PlayerShoot : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] Camera mainCamera;
     [SerializeField] Transform shootPoint;
 
     [Header("Projectile")]
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] float bulletSpeed = 25f;
 
-    [Header("Shooting")]
+    [Header("Shoot")]
     [SerializeField] float shootCooldown = 0.2f;
 
     [Header("VFX")]
     [SerializeField] GameObject muzzleVFX;
 
-    [Header("Camera FX")]
-    [SerializeField] float normalFOV = 60f;
-    [SerializeField] float shootFOV = 55f;
-    [SerializeField] float zoomSpeed = 15f;
-    [SerializeField] float zoomDuration = 0.08f;
-
-    [Header("Post Processing")]
-    [SerializeField] Volume shootVolume;
-    [SerializeField] float volumeIntensity = 1f;
-    [SerializeField] float volumeFadeSpeed = 10f;
-
     bool canShoot = true;
 
-    float targetFOV;
-
-    private void Awake()
+    public void OnShoot(InputAction.CallbackContext context)
     {
-        if (mainCamera == null)
-            mainCamera = Camera.main;
-    }
+        if (!context.performed)
+            return;
 
-    void Start()
-    {
-        targetFOV = normalFOV;
+        if (!canShoot)
+            return;
 
-        mainCamera.fieldOfView = normalFOV;
-
-        if (shootVolume != null)
-            shootVolume.weight = 0f;
-    }
-
-    void Update()
-    {
-        mainCamera.fieldOfView = Mathf.Lerp(
-            mainCamera.fieldOfView,
-            targetFOV,
-            Time.deltaTime * zoomSpeed
-        );
-
-        if (shootVolume != null)
-        {
-            shootVolume.weight = Mathf.Lerp(
-                shootVolume.weight,
-                0f,
-                Time.deltaTime * volumeFadeSpeed
-            );
-        }
+        StartCoroutine(ShootRoutine());
     }
 
     IEnumerator ShootRoutine()
@@ -81,7 +43,6 @@ public class PlayerShoot : MonoBehaviour
 
     void Shoot()
     {
-        // MUZZLE FLASH
         if (muzzleVFX != null)
         {
             GameObject muzzle = Instantiate(
@@ -93,51 +54,18 @@ public class PlayerShoot : MonoBehaviour
             Destroy(muzzle, 2f);
         }
 
-        // CAMERA FX
-        StartCoroutine(ShootZoom());
-
-        if (shootVolume != null)
-        {
-            shootVolume.weight = volumeIntensity;
-        }
-
-        // BULLET
         GameObject bullet = Instantiate(
             bulletPrefab,
             shootPoint.position,
             shootPoint.rotation
         );
 
-        Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
-        if (bulletRb != null)
+        if (rb != null)
         {
-            bulletRb.linearVelocity =
+            rb.linearVelocity =
                 shootPoint.forward * bulletSpeed;
         }
     }
-
-    IEnumerator ShootZoom()
-    {
-        targetFOV = shootFOV;
-
-        yield return new WaitForSeconds(zoomDuration);
-
-        targetFOV = normalFOV;
-    }
-
-    #region INPUT
-
-    public void OnShoot(InputAction.CallbackContext context)
-    {
-        if (!context.performed)
-            return;
-
-        if (!canShoot)
-            return;
-
-        StartCoroutine(ShootRoutine());
-    }
-
-    #endregion
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
@@ -9,12 +10,11 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("References")]
     [SerializeField] Camera mainCamera;
+    [SerializeField] Animator animator;
 
     Rigidbody rb;
 
     Vector2 moveInput;
-
-    public Vector3 AimDirection { get; private set; }
 
     private void Awake()
     {
@@ -24,68 +24,66 @@ public class PlayerMovement : MonoBehaviour
             mainCamera = Camera.main;
     }
 
-    private void Update()
-    {
-        RotateToMouse();
-    }
-
     private void FixedUpdate()
     {
-        Movement();
+        Move();
     }
 
-    void Movement()
+    void Move()
     {
-        Vector3 moveDirection = new Vector3(moveInput.x, 0f, moveInput.y);
+        // DIRECCIÓN RELATIVA A CÁMARA
+        Vector3 forward =
+            mainCamera.transform.forward;
 
-        moveDirection = Vector3.ClampMagnitude(moveDirection, 1f);
+        Vector3 right =
+            mainCamera.transform.right;
 
-        Vector3 velocity = moveDirection * moveSpeed;
+        forward.y = 0f;
+        right.y = 0f;
+
+        forward.Normalize();
+        right.Normalize();
+
+        Vector3 moveDirection =
+            forward * moveInput.y +
+            right * moveInput.x;
+
+        moveDirection.Normalize();
+
+        // MOVIMIENTO
+        Vector3 movement =
+            moveDirection * moveSpeed;
 
         rb.linearVelocity = new Vector3(
-            velocity.x,
+            movement.x,
             rb.linearVelocity.y,
-            velocity.z
-        );
-    }
-
-    void RotateToMouse()
-    {
-        Ray ray = mainCamera.ScreenPointToRay(
-            Mouse.current.position.ReadValue()
+            movement.z
         );
 
-        Plane groundPlane = new Plane(
-            Vector3.up,
-            transform.position
-        );
-
-        if (groundPlane.Raycast(ray, out float distance))
+        // ROTACIÓN PLAYER
+        if (moveDirection.sqrMagnitude > 0.01f)
         {
-            Vector3 mouseWorldPosition = ray.GetPoint(distance);
+            Quaternion targetRotation =
+                Quaternion.LookRotation(moveDirection);
 
-            Vector3 direction =
-                mouseWorldPosition - transform.position;
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                targetRotation,
+                rotationSpeed * Time.fixedDeltaTime
+            );
+        }
 
-            direction.y = 0f;
-
-            AimDirection = direction;
-
-            if (AimDirection.sqrMagnitude > 0.01f)
-            {
-                Quaternion targetRotation =
-                    Quaternion.LookRotation(AimDirection);
-
-                transform.rotation = Quaternion.Slerp(
-                    transform.rotation,
-                    targetRotation,
-                    rotationSpeed * Time.deltaTime
-                );
-            }
+        // ANIMACIONES
+        if (animator != null)
+        {
+            animator.SetFloat(
+                "Speed",
+                moveDirection.magnitude
+            );
         }
     }
 
-    #region INPUT SYSTEM
+    #region INPUT
 
     public void OnMove(InputAction.CallbackContext context)
     {
