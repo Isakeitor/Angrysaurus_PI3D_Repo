@@ -14,8 +14,8 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.4402634, g: 0.4673332, b: 0.5622641, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -23,10 +23,10 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0.5
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: b8b778f88fb76ea41b721a7e09cfefcc, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -35,7 +35,7 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_UseRadianceAmbientProbe: 0
@@ -93,8 +93,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: d001d65db3904f3429b0876a70790e14, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 88c500562e20f9d439ae15607f48b1b8, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -182,6 +182,10 @@ PrefabInstance:
     - target: {fileID: 4487117383514535813, guid: 7370cfb5b6e578c4f98bab24b075dd2a, type: 3}
       propertyPath: m_Name
       value: Rock (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487117383514535813, guid: 7370cfb5b6e578c4f98bab24b075dd2a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -305,6 +309,10 @@ PrefabInstance:
     - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
       propertyPath: m_Name
       value: Valla (62)
+      objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -493,6 +501,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6589173206620138836, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.7153
@@ -618,6 +630,10 @@ PrefabInstance:
     - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
       propertyPath: m_Name
       value: Valla (80)
+      objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1204,6 +1220,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Valla (94)
       objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1313,6 +1333,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Valla (73)
       objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1360,9 +1384,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1848980807}
     m_Modifications:
+    - target: {fileID: 552717217643506851, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325859543068304841, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2140195147115380930, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222980709966222640, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693489995005295551, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4708302833882956076, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
       propertyPath: m_Name
       value: Arbol (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708302833882956076, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5340302514707192726, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
       propertyPath: m_LocalScale.x
@@ -1435,6 +1483,127 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5340302514707192726, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
   m_PrefabInstance: {fileID: 280352825}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &288745984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 288745985}
+  - component: {fileID: 288745987}
+  - component: {fileID: 288745986}
+  m_Layer: 0
+  m_Name: Spot Light (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &288745985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288745984}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 10.1, y: 11.4, z: 25.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 395915941}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &288745986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288745984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!108 &288745987
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288745984}
+  m_Enabled: 1
+  serializedVersion: 11
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 45
+  m_Range: 53.19
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 2
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!1 &302446821 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4708302833882956076, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
@@ -1627,9 +1796,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1848980807}
     m_Modifications:
+    - target: {fileID: 552717217643506851, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325859543068304841, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2140195147115380930, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222980709966222640, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693489995005295551, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4708302833882956076, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
       propertyPath: m_Name
       value: Arbol (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708302833882956076, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5340302514707192726, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
       propertyPath: m_LocalScale.x
@@ -1758,6 +1951,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4487117383514535813, guid: 7370cfb5b6e578c4f98bab24b075dd2a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1788,6 +1985,10 @@ PrefabInstance:
     - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_Name
       value: Grass (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6589173206620138836, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -2366,6 +2567,71 @@ Transform:
   - {fileID: 391716144}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &343848038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 343848039}
+  - component: {fileID: 343848040}
+  m_Layer: 0
+  m_Name: Reflection Probe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &343848039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343848038}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 395915941}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!215 &343848040
+ReflectionProbe:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343848038}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 0
+  m_RefreshMode: 0
+  m_TimeSlicingMode: 0
+  m_Resolution: 128
+  m_UpdateFrequency: 0
+  m_BoxSize: {x: 111.22148, y: 14.858322, z: 110.43509}
+  m_BoxOffset: {x: -0.14083862, y: 6.744482, z: -0.91052246}
+  m_NearClip: 0.3
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IntensityMultiplier: 1
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_Importance: 1
+  m_CustomBakedTexture: {fileID: 0}
 --- !u!1 &357237473 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4487117383514535813, guid: 7370cfb5b6e578c4f98bab24b075dd2a, type: 3}
@@ -2413,6 +2679,10 @@ PrefabInstance:
     - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_Name
       value: Grass (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6589173206620138836, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -2536,6 +2806,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Valla (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2634,6 +2908,10 @@ PrefabInstance:
     - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
       propertyPath: m_Name
       value: Valla (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2825,6 +3103,43 @@ Transform:
   - {fileID: 1997086457}
   m_Father: {fileID: 336179618}
   m_LocalEulerAnglesHint: {x: 0, y: -263.083, z: 0}
+--- !u!1 &395915940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 395915941}
+  m_Layer: 0
+  m_Name: "Iluminaci\xF3n"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &395915941
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395915940}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1177802785}
+  - {fileID: 492961328}
+  - {fileID: 1466054238}
+  - {fileID: 288745985}
+  - {fileID: 1579653972}
+  - {fileID: 343848039}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &403703580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2884,6 +3199,10 @@ PrefabInstance:
     - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
       propertyPath: m_Name
       value: Valla (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2988,6 +3307,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Valla (82)
       objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3081,6 +3404,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6589173206620138836, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.24
@@ -3154,6 +3481,10 @@ PrefabInstance:
     - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_Name
       value: Grass (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6589173206620138836, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -3229,6 +3560,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6589173206620138836, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.7153
@@ -3299,9 +3634,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1848980807}
     m_Modifications:
+    - target: {fileID: 552717217643506851, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325859543068304841, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2140195147115380930, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222980709966222640, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693489995005295551, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4708302833882956076, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
       propertyPath: m_Name
       value: Arbol (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708302833882956076, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5340302514707192726, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
       propertyPath: m_LocalScale.x
@@ -3379,6 +3738,127 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4487117383514535813, guid: 7370cfb5b6e578c4f98bab24b075dd2a, type: 3}
   m_PrefabInstance: {fileID: 1588774829}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &492961327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 492961328}
+  - component: {fileID: 492961330}
+  - component: {fileID: 492961329}
+  m_Layer: 0
+  m_Name: Spot Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &492961328
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492961327}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 24.2, y: 11.4, z: -34.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 395915941}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &492961329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492961327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!108 &492961330
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492961327}
+  m_Enabled: 1
+  serializedVersion: 11
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 45
+  m_Range: 53.19
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 2
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!1 &496193589 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4708302833882956076, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
@@ -3447,6 +3927,10 @@ PrefabInstance:
     - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
       propertyPath: m_Name
       value: Valla (81)
+      objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3823,6 +4307,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4487117383514535813, guid: 7370cfb5b6e578c4f98bab24b075dd2a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3959,6 +4447,10 @@ PrefabInstance:
     - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
       propertyPath: m_Name
       value: Valla (97)
+      objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4210,9 +4702,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1848980807}
     m_Modifications:
+    - target: {fileID: 552717217643506851, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325859543068304841, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2140195147115380930, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222980709966222640, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693489995005295551, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4708302833882956076, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
       propertyPath: m_Name
       value: Arbol (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708302833882956076, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5340302514707192726, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
       propertyPath: m_LocalScale.x
@@ -4665,6 +5181,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4487117383514535813, guid: 7370cfb5b6e578c4f98bab24b075dd2a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4829,6 +5349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6589173206620138836, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.7153
@@ -4902,6 +5426,10 @@ PrefabInstance:
     - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_Name
       value: Grass (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6589173206620138836, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -5024,6 +5552,10 @@ PrefabInstance:
     - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
       propertyPath: m_Name
       value: Valla (126)
+      objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5256,7 +5788,7 @@ MonoBehaviour:
   distance: 15
   height: -3
   followSmoothness: 15
-  mouseSensitivity: 60
+  mouseSensitivity: 40
   rotationSmoothness: 4
 --- !u!1 &732282787 stripped
 GameObject:
@@ -5533,6 +6065,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Valla (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5632,6 +6168,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Valla (46)
       objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5730,6 +6270,10 @@ PrefabInstance:
     - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
       propertyPath: m_Name
       value: Valla (78)
+      objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6110,6 +6654,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Valla (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6208,6 +6756,10 @@ PrefabInstance:
     - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
       propertyPath: m_Name
       value: Valla (49)
+      objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6308,6 +6860,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Valla (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6407,6 +6963,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Valla (65)
       objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6457,6 +7017,10 @@ PrefabInstance:
     - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_Name
       value: Grass (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6589173206620138836, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -6584,6 +7148,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Valla (79)
       objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6677,6 +7245,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6589173206620138836, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.24
@@ -6750,6 +7322,10 @@ PrefabInstance:
     - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_Name
       value: Grass (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6589173206620138836, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -6866,6 +7442,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6589173206620138836, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.24
@@ -6940,6 +7520,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass
       objectReference: {fileID: 0}
+    - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6589173206620138836, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.7153
@@ -7010,9 +7594,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1848980807}
     m_Modifications:
+    - target: {fileID: 552717217643506851, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325859543068304841, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2140195147115380930, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222980709966222640, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693489995005295551, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4708302833882956076, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
       propertyPath: m_Name
       value: Arbol
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708302833882956076, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5340302514707192726, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
       propertyPath: m_LocalScale.x
@@ -7197,6 +7805,10 @@ PrefabInstance:
     - target: {fileID: 4487117383514535813, guid: 7370cfb5b6e578c4f98bab24b075dd2a, type: 3}
       propertyPath: m_Name
       value: Rock (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487117383514535813, guid: 7370cfb5b6e578c4f98bab24b075dd2a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7513,6 +8125,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4487117383514535813, guid: 7370cfb5b6e578c4f98bab24b075dd2a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7623,7 +8239,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -7690,7 +8306,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 395915941}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &1177802786
 MonoBehaviour:
@@ -7778,6 +8394,10 @@ PrefabInstance:
     - target: {fileID: 4487117383514535813, guid: 7370cfb5b6e578c4f98bab24b075dd2a, type: 3}
       propertyPath: m_Name
       value: Rock (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487117383514535813, guid: 7370cfb5b6e578c4f98bab24b075dd2a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8395,6 +9015,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6589173206620138836, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.24
@@ -8526,6 +9150,10 @@ PrefabInstance:
     - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
       propertyPath: m_Name
       value: Valla (86)
+      objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8669,6 +9297,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6589173206620138836, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.24
@@ -8791,6 +9423,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Valla (81)
       objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8841,6 +9477,10 @@ PrefabInstance:
     - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_Name
       value: Grass (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6589173206620138836, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -9312,6 +9952,10 @@ PrefabInstance:
     - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
       propertyPath: m_Name
       value: Valla (54)
+      objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9831,6 +10475,127 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.020824218, y: 0.02075896, z: 0.019427096}
   m_Center: {x: 0.00013809052, y: 6.8693957e-12, z: -0.0008983298}
+--- !u!1 &1466054237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1466054238}
+  - component: {fileID: 1466054240}
+  - component: {fileID: 1466054239}
+  m_Layer: 0
+  m_Name: Spot Light (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1466054238
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466054237}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -26.4, y: 11.4, z: -33.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 395915941}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1466054239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466054237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!108 &1466054240
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466054237}
+  m_Enabled: 1
+  serializedVersion: 11
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 45
+  m_Range: 53.19
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 2
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!1001 &1502167277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9842,6 +10607,10 @@ PrefabInstance:
     - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_Name
       value: Grass (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6589173206620138836, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -9968,6 +10737,10 @@ PrefabInstance:
     - target: {fileID: 4487117383514535813, guid: 7370cfb5b6e578c4f98bab24b075dd2a, type: 3}
       propertyPath: m_Name
       value: Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487117383514535813, guid: 7370cfb5b6e578c4f98bab24b075dd2a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10266,6 +11039,10 @@ PrefabInstance:
     - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
       propertyPath: m_Name
       value: Valla (105)
+      objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10778,6 +11555,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Valla (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10817,6 +11598,56 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0043106824, y: 0.07452343, z: 0.0785554}
   m_Center: {x: 0.00049927324, y: -0.0046358914, z: 0.0032265657}
+--- !u!1 &1579653971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1579653972}
+  - component: {fileID: 1579653973}
+  m_Layer: 0
+  m_Name: Light Probe Group
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1579653972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579653971}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 395915941}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!220 &1579653973
+LightProbeGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579653971}
+  m_Enabled: 1
+  m_SourcePositions:
+  - {x: 1, y: 1, z: 1}
+  - {x: 1, y: 1, z: -1}
+  - {x: 1, y: -1, z: 1}
+  - {x: 1, y: -1, z: -1}
+  - {x: -1, y: 1, z: 1}
+  - {x: -1, y: 1, z: -1}
+  - {x: -1, y: -1, z: 1}
+  - {x: -1, y: -1, z: -1}
+  m_Dering: 1
 --- !u!1 &1581605303 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4487117383514535813, guid: 7370cfb5b6e578c4f98bab24b075dd2a, type: 3}
@@ -10943,6 +11774,10 @@ PrefabInstance:
     - target: {fileID: 4487117383514535813, guid: 7370cfb5b6e578c4f98bab24b075dd2a, type: 3}
       propertyPath: m_Name
       value: Rock (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487117383514535813, guid: 7370cfb5b6e578c4f98bab24b075dd2a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11080,6 +11915,10 @@ PrefabInstance:
     - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
       propertyPath: m_Name
       value: Valla (113)
+      objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11402,6 +12241,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4487117383514535813, guid: 7370cfb5b6e578c4f98bab24b075dd2a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11515,6 +12358,10 @@ PrefabInstance:
     - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_Name
       value: Grass (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6589173206620138836, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -11637,6 +12484,10 @@ PrefabInstance:
     - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
       propertyPath: m_Name
       value: Valla (110)
+      objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12186,6 +13037,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Valla (118)
       objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12539,9 +13394,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1848980807}
     m_Modifications:
+    - target: {fileID: 552717217643506851, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325859543068304841, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2140195147115380930, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222980709966222640, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693489995005295551, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4708302833882956076, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
       propertyPath: m_Name
       value: Arbol (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708302833882956076, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5340302514707192726, guid: a3b0ff3c6670f2048bd8d4955b981678, type: 3}
       propertyPath: m_LocalScale.x
@@ -12730,6 +13609,10 @@ PrefabInstance:
     - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
       propertyPath: m_Name
       value: Valla (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 742401777020527228, guid: 3b7cc11884584d14b97ba1a8db04cbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12962,6 +13845,10 @@ PrefabInstance:
     - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_Name
       value: Grass (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781111958189979630, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6589173206620138836, guid: 100dc001225d01e4b82763de392af3a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -13279,6 +14166,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7600119087179115120, guid: 45cd630c9ed0f7f49a555ceb4e75afd8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13293,7 +14184,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 722548526}
   - {fileID: 609787211}
-  - {fileID: 1177802785}
   - {fileID: 1276327094}
   - {fileID: 3195358449158547216}
   - {fileID: 203121806}
@@ -13304,3 +14194,4 @@ SceneRoots:
   - {fileID: 1842130645}
   - {fileID: 1246331257}
   - {fileID: 210230517}
+  - {fileID: 395915941}
