@@ -4,33 +4,58 @@ using UnityEngine.InputSystem;
 public class PlayerInteraction : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] Camera mainCamera;
+    [SerializeField] Transform carryPoint;
 
-    [Header("Interaction")]
-    [SerializeField] float interactionDistance = 4f;
+    PickupItem nearbyPickup;
+    PickupItem carriedItem;
+
+    public bool IsCarrying => carriedItem != null;
 
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (!context.performed)
             return;
 
-        Ray ray = mainCamera.ScreenPointToRay(
-            Mouse.current.position.ReadValue()
-        );
-
-        if (Physics.Raycast(
-            ray,
-            out RaycastHit hit,
-            interactionDistance
-        ))
+        if (!IsCarrying && nearbyPickup != null)
         {
-            IInteractable interactable =
-                hit.collider.GetComponent<IInteractable>();
+            Pickup(nearbyPickup);
+        }
+    }
 
-            if (interactable != null)
-            {
-                interactable.Interact();
-            }
+    void Pickup(PickupItem item)
+    {
+        carriedItem = item;
+
+        item.Pickup(carryPoint);
+
+        Debug.Log(
+            "Objeto recogido: " +
+            item.name
+        );
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        PickupItem pickup =
+            other.GetComponent<PickupItem>();
+
+        if (pickup != null)
+        {
+            nearbyPickup = pickup;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        PickupItem pickup =
+            other.GetComponent<PickupItem>();
+
+        if (
+            pickup != null &&
+            pickup == nearbyPickup
+        )
+        {
+            nearbyPickup = null;
         }
     }
 }
