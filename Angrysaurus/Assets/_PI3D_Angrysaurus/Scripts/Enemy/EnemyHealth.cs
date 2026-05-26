@@ -1,4 +1,5 @@
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -18,7 +19,6 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] float destroyDelay = 3f;
 
     int currentHealth;
-
     bool isDead;
 
     Material originalMaterial;
@@ -29,8 +29,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (enemyRenderer != null)
         {
-            originalMaterial =
-                enemyRenderer.material;
+            originalMaterial = enemyRenderer.material;
         }
     }
 
@@ -61,10 +60,7 @@ public class EnemyHealth : MonoBehaviour
 
         CancelInvoke(nameof(ResetMaterial));
 
-        Invoke(
-            nameof(ResetMaterial),
-            flashDuration
-        );
+        Invoke(nameof(ResetMaterial), flashDuration);
     }
 
     void ResetMaterial()
@@ -72,28 +68,48 @@ public class EnemyHealth : MonoBehaviour
         if (enemyRenderer == null)
             return;
 
-        enemyRenderer.material =
-            originalMaterial;
+        enemyRenderer.material = originalMaterial;
     }
 
     void Die()
     {
         isDead = true;
 
+        // ❌ STOP IA COMPLETAMENTE
+        EnemyIA ia = GetComponent<EnemyIA>();
+        if (ia != null)
+            ia.enabled = false;
+
+        // ❌ STOP NAVMESH MOVEMENT
+        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        if (agent != null)
+        {
+            agent.isStopped = true;
+            agent.ResetPath();
+        }
+
+        // ❌ STOP PHYSICS (por si acaso)
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            rb.isKinematic = true;
+        }
+
+        // ANIMACIÓN MUERTE
         if (animator != null)
         {
             animator.SetTrigger("Death");
         }
 
+        // VFX MUERTE
         if (deathVFX != null)
         {
-            Instantiate(
-                deathVFX,
-                transform.position,
-                Quaternion.identity
-            );
+            Instantiate(deathVFX, transform.position, Quaternion.identity);
         }
 
+        // DESTRUIR
         Destroy(gameObject, destroyDelay);
     }
 }

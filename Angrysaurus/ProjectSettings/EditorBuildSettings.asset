@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/_PI3D_Angrysaurus/Scenes/SCN_FloridaScene.unity
+    guid: 800761466fb3cea4f99467b837143c75
   - enabled: 1
     path: Assets/_PI3D_Angrysaurus/Scenes/SCN_MainMenu.unity
     guid: f3f700ae9186d154e92cd213400292f5
