@@ -12,7 +12,6 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("References")]
     [SerializeField] Animator animator;
-
     [SerializeField] GameObject defeatPanel;
 
     int currentHealth;
@@ -121,6 +120,12 @@ public class PlayerHealth : MonoBehaviour
         if (animator != null)
         {
             animator.SetTrigger("Death");
+        }
+
+        // 🔥 AVISAR AL GAMEMANAGER
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.Defeat();
         }
 
         StartCoroutine(DefeatRoutine());

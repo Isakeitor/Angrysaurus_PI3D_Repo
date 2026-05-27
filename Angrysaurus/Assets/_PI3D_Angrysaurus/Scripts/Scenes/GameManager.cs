@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +12,9 @@ public class GameManager : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] GameObject victoryScreen;
+
+    [Header("Scene")]
+    [SerializeField] string menuSceneName = "SCN_MainMenu";
 
     int currentDeliveries;
 
@@ -36,7 +41,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        // DEBUG CLICK
         if (
             Mouse.current != null &&
             Mouse.current.leftButton.wasPressedThisFrame
@@ -79,10 +83,10 @@ public class GameManager : MonoBehaviour
 
         Cursor.visible = true;
 
-        // DESACTIVAR INPUT
+        // CAMBIAR A UI MAP
         if (playerInput != null)
         {
-            playerInput.DeactivateInput();
+            playerInput.SwitchCurrentActionMap("UI");
         }
 
         // DESACTIVAR MOVIMIENTO
@@ -119,5 +123,21 @@ public class GameManager : MonoBehaviour
                 cam.DisableCameraControl();
             }
         }
+
+        // 🔥 VOLVER AL MENU EN 10s
+        StartCoroutine(ReturnToMenuRoutine());
+    }
+
+    // 🔥 LLAMAR DESDE PLAYERHEALTH AL MORIR
+    public void Defeat()
+    {
+        StartCoroutine(ReturnToMenuRoutine());
+    }
+
+    IEnumerator ReturnToMenuRoutine()
+    {
+        yield return new WaitForSeconds(10f);
+
+        SceneManager.LoadScene(menuSceneName);
     }
 }
