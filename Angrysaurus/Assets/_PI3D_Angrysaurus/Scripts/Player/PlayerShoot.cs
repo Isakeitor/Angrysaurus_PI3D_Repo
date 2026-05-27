@@ -30,25 +30,41 @@ public class PlayerShoot : MonoBehaviour
     Collider playerCollider;
     PlayerMovement movement;
 
+    // 🔥 NUEVO
+    PlayerInteraction interaction;
+
     void Start()
     {
         if (mainCamera == null)
             mainCamera = Camera.main;
 
         playerCollider = GetComponent<Collider>();
+
         movement = GetComponent<PlayerMovement>();
 
+        // 🔥 NUEVO
+        interaction = GetComponent<PlayerInteraction>();
+
         targetFOV = normalFOV;
+
         mainCamera.fieldOfView = normalFOV;
     }
 
     void Update()
     {
         mainCamera.fieldOfView =
-            Mathf.Lerp(mainCamera.fieldOfView, targetFOV, zoomSpeed * Time.deltaTime);
+            Mathf.Lerp(
+                mainCamera.fieldOfView,
+                targetFOV,
+                zoomSpeed * Time.deltaTime
+            );
 
         targetFOV =
-            Mathf.Lerp(targetFOV, normalFOV, zoomReturnSpeed * Time.deltaTime);
+            Mathf.Lerp(
+                targetFOV,
+                normalFOV,
+                zoomReturnSpeed * Time.deltaTime
+            );
     }
 
     public void OnShoot(InputAction.CallbackContext context)
@@ -58,6 +74,15 @@ public class PlayerShoot : MonoBehaviour
 
         if (!canShoot)
             return;
+
+        // 🔥 NO DISPARAR SI LLEVA ITEM
+        if (
+            interaction != null &&
+            interaction.IsCarrying
+        )
+        {
+            return;
+        }
 
         StartCoroutine(ShootRoutine());
     }
@@ -77,49 +102,83 @@ public class PlayerShoot : MonoBehaviour
     {
         targetFOV = shootFOV;
 
-        // 🎯 CENTRO DE CÁMARA (TPS AIM REAL)
-        Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+        Ray ray =
+            mainCamera.ViewportPointToRay(
+                new Vector3(0.5f, 0.5f, 0f)
+            );
 
         Vector3 targetPoint;
 
-        if (Physics.Raycast(ray, out RaycastHit hit))
+        if (
+            Physics.Raycast(
+                ray,
+                out RaycastHit hit
+            )
+        )
+        {
             targetPoint = hit.point;
+        }
         else
+        {
             targetPoint = ray.GetPoint(100f);
+        }
 
-        Vector3 direction = (targetPoint - shootPoint.position).normalized;
+        Vector3 direction =
+            (
+                targetPoint -
+                shootPoint.position
+            ).normalized;
 
-        // 🔥 FORZAR ROTACIÓN DEL PERSONAJE HACIA EL DISPARO
+        // ROTAR PLAYER HACIA DISPARO
         if (movement != null)
+        {
             movement.ForceLookDirection(direction);
+        }
 
         // VFX
         if (muzzleVFX != null)
         {
             GameObject muzzle =
-                Instantiate(muzzleVFX, shootPoint.position, Quaternion.LookRotation(direction));
+                Instantiate(
+                    muzzleVFX,
+                    shootPoint.position,
+                    Quaternion.LookRotation(direction)
+                );
 
             Destroy(muzzle, 2f);
         }
 
         // BALA
         GameObject bullet =
-            Instantiate(bulletPrefab, shootPoint.position, Quaternion.LookRotation(direction));
+            Instantiate(
+                bulletPrefab,
+                shootPoint.position,
+                Quaternion.LookRotation(direction)
+            );
 
-        // COLLISION IGNORE PLAYER
-        Collider bulletCollider = bullet.GetComponent<Collider>();
+        // IGNORAR PLAYER
+        Collider bulletCollider =
+            bullet.GetComponent<Collider>();
 
-        if (bulletCollider != null && playerCollider != null)
+        if (
+            bulletCollider != null &&
+            playerCollider != null
+        )
         {
-            Physics.IgnoreCollision(bulletCollider, playerCollider);
+            Physics.IgnoreCollision(
+                bulletCollider,
+                playerCollider
+            );
         }
 
         // MOVIMIENTO BALA
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        Rigidbody rb =
+            bullet.GetComponent<Rigidbody>();
 
         if (rb != null)
         {
-            rb.linearVelocity = direction * bulletSpeed;
+            rb.linearVelocity =
+                direction * bulletSpeed;
         }
     }
 }
