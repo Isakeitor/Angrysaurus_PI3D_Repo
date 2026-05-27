@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class CameraFollow : MonoBehaviour
@@ -32,6 +32,9 @@ public class CameraFollow : MonoBehaviour
 
     bool cameraActive = true;
 
+    // 🔥 NUEVO
+    public float Yaw => yaw;
+
     void Start()
     {
         EnableCameraControl();
@@ -64,13 +67,8 @@ public class CameraFollow : MonoBehaviour
             maxPitch
         );
 
-        // ROTAR PLAYER
-        target.rotation =
-            Quaternion.Euler(
-                0f,
-                yaw,
-                0f
-            );
+        // ❌ ELIMINADO:
+        // target.rotation = Quaternion.Euler(0f, yaw, 0f);
     }
 
     void FollowTarget()
