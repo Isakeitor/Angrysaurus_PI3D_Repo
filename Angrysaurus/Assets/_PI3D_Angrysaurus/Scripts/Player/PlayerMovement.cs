@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -13,8 +13,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Animator animator;
 
     Rigidbody rb;
-
     Vector2 moveInput;
+
+    // 🔥 NUEVO: override de rotación por disparo
+    Vector3 forcedLookDirection;
+    bool hasForcedLook;
 
     private void Awake()
     {
@@ -31,12 +34,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        // DIRECCI�N RELATIVA A C�MARA
-        Vector3 forward =
-            mainCamera.transform.forward;
-
-        Vector3 right =
-            mainCamera.transform.right;
+        Vector3 forward = mainCamera.transform.forward;
+        Vector3 right = mainCamera.transform.right;
 
         forward.y = 0f;
         right.y = 0f;
@@ -51,8 +50,7 @@ public class PlayerMovement : MonoBehaviour
         moveDirection.Normalize();
 
         // MOVIMIENTO
-        Vector3 movement =
-            moveDirection * moveSpeed;
+        Vector3 movement = moveDirection * moveSpeed;
 
         rb.linearVelocity = new Vector3(
             movement.x,
@@ -60,35 +58,55 @@ public class PlayerMovement : MonoBehaviour
             movement.z
         );
 
-        // ROTACI�N PLAYER
-        if (moveDirection.sqrMagnitude > 0.01f)
-        {
-            Quaternion targetRotation =
-                Quaternion.LookRotation(moveDirection);
+        // 🔥 ROTACIÓN CON PRIORIDAD
+        Quaternion targetRotation;
 
-            transform.rotation = Quaternion.Slerp(
-                transform.rotation,
-                targetRotation,
-                rotationSpeed * Time.fixedDeltaTime
-            );
+        if (hasForcedLook)
+        {
+            // DISPARO TIENE PRIORIDAD
+            Vector3 dir = forcedLookDirection;
+            dir.y = 0f;
+
+            targetRotation = Quaternion.LookRotation(dir);
+
+            hasForcedLook = false; // se consume
         }
+        else if (moveDirection.sqrMagnitude > 0.01f)
+        {
+            // MOVIMIENTO
+            targetRotation = Quaternion.LookRotation(moveDirection);
+        }
+        else
+        {
+            // IDLE → cámara
+            Vector3 camForward = mainCamera.transform.forward;
+            camForward.y = 0f;
+
+            targetRotation = Quaternion.LookRotation(camForward);
+        }
+
+        transform.rotation = Quaternion.Slerp(
+            transform.rotation,
+            targetRotation,
+            rotationSpeed * Time.fixedDeltaTime
+        );
 
         // ANIMACIONES
         if (animator != null)
         {
-            animator.SetFloat(
-                "Speed",
-                moveDirection.magnitude
-            );
+            animator.SetFloat("Speed", moveDirection.magnitude);
         }
     }
 
-    #region INPUT
+    // 🔥 NUEVO: llamado desde Shoot
+    public void ForceLookDirection(Vector3 direction)
+    {
+        forcedLookDirection = direction;
+        hasForcedLook = true;
+    }
 
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
     }
-
-    #endregion
 }

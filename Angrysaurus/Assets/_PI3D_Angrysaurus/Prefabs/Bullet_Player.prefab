@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 842528606989085048, guid: d041f332acce5b040a3f9304f5fbb7c1, type: 3}
       propertyPath: m_Name
-      value: Bullet_Proto
+      value: Bullet_Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2537188315228100975, guid: d041f332acce5b040a3f9304f5fbb7c1, type: 3}
+      propertyPath: lifeTime
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8233736212002187245, guid: d041f332acce5b040a3f9304f5fbb7c1, type: 3}
       propertyPath: m_LocalPosition.x

@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
     [Header("Health")]
     [SerializeField] int maxHealth = 100;
+
+    [Header("UI Hearts")]
+    [SerializeField] Image[] hearts;
 
     [Header("References")]
     [SerializeField] Animator animator;
@@ -20,12 +23,6 @@ public class PlayerHealth : MonoBehaviour
 
     PlayerMovement movement;
 
-    PlayerShoot shoot;
-
-    PlayerInput playerInput;
-
-    CameraFollow cameraFollow;
-
     void Start()
     {
         currentHealth = maxHealth;
@@ -35,22 +32,12 @@ public class PlayerHealth : MonoBehaviour
         movement =
             GetComponent<PlayerMovement>();
 
-        shoot =
-            GetComponent<PlayerShoot>();
-
-        playerInput =
-            GetComponent<PlayerInput>();
-
-        if (Camera.main != null)
-        {
-            cameraFollow =
-                Camera.main.GetComponent<CameraFollow>();
-        }
-
         if (defeatPanel != null)
         {
             defeatPanel.SetActive(false);
         }
+
+        UpdateHearts();
     }
 
     public void TakeDamage(int damage)
@@ -60,9 +47,45 @@ public class PlayerHealth : MonoBehaviour
 
         currentHealth -= damage;
 
+        if (currentHealth < 0)
+        {
+            currentHealth = 0;
+        }
+
+        Debug.Log(
+            "Player HP: " +
+            currentHealth
+        );
+
+        UpdateHearts();
+
         if (currentHealth <= 0)
         {
             Die();
+        }
+    }
+
+    void UpdateHearts()
+    {
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            hearts[i].enabled = false;
+        }
+
+        if (currentHealth > 66)
+        {
+            hearts[0].enabled = true;
+            hearts[1].enabled = true;
+            hearts[2].enabled = true;
+        }
+        else if (currentHealth > 33)
+        {
+            hearts[0].enabled = true;
+            hearts[1].enabled = true;
+        }
+        else if (currentHealth > 0)
+        {
+            hearts[0].enabled = true;
         }
     }
 
@@ -70,28 +93,10 @@ public class PlayerHealth : MonoBehaviour
     {
         isDead = true;
 
-        // DESACTIVAR INPUT
-        if (playerInput != null)
-        {
-            playerInput.DeactivateInput();
-        }
-
-        // DESACTIVAR MOVIMIENTO
+        // PARAR MOVIMIENTO
         if (movement != null)
         {
             movement.enabled = false;
-        }
-
-        // DESACTIVAR SHOOT
-        if (shoot != null)
-        {
-            shoot.enabled = false;
-        }
-
-        // DESACTIVAR CAMERA
-        if (cameraFollow != null)
-        {
-            cameraFollow.DisableCameraControl();
         }
 
         // PARAR FÍSICAS
