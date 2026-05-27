@@ -9,6 +9,8 @@ public class PlayerInteraction : MonoBehaviour
     PickupItem nearbyPickup;
     PickupItem carriedItem;
 
+    NPCDialogue nearbyNPC;
+
     public bool IsCarrying => carriedItem != null;
 
     public void OnInteract(InputAction.CallbackContext context)
@@ -16,6 +18,14 @@ public class PlayerInteraction : MonoBehaviour
         if (!context.performed)
             return;
 
+        // NPC
+        if (nearbyNPC != null)
+        {
+            nearbyNPC.ToggleDialogue();
+            return;
+        }
+
+        // PICKUP
         if (!IsCarrying && nearbyPickup != null)
         {
             Pickup(nearbyPickup);
@@ -43,6 +53,14 @@ public class PlayerInteraction : MonoBehaviour
         {
             nearbyPickup = pickup;
         }
+
+        NPCDialogue npc =
+            other.GetComponent<NPCDialogue>();
+
+        if (npc != null)
+        {
+            nearbyNPC = npc;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -56,6 +74,17 @@ public class PlayerInteraction : MonoBehaviour
         )
         {
             nearbyPickup = null;
+        }
+
+        NPCDialogue npc =
+            other.GetComponent<NPCDialogue>();
+
+        if (
+            npc != null &&
+            npc == nearbyNPC
+        )
+        {
+            nearbyNPC = null;
         }
     }
 }
