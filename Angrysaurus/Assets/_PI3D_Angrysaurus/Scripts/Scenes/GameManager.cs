@@ -124,6 +124,17 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        // 🔥 DESACTIVAR TODOS LOS ENEMIGOS
+        EnemyIA[] enemies =
+            FindObjectsByType<EnemyIA>(
+                FindObjectsSortMode.None
+            );
+
+        foreach (EnemyIA enemy in enemies)
+        {
+            enemy.DisableEnemy();
+        }
+
         // 🔥 VOLVER AL MENU EN 10s
         StartCoroutine(ReturnToMenuRoutine());
     }
@@ -131,6 +142,17 @@ public class GameManager : MonoBehaviour
     // 🔥 LLAMAR DESDE PLAYERHEALTH AL MORIR
     public void Defeat()
     {
+        // 🔥 DESACTIVAR TODOS LOS ENEMIGOS
+        EnemyIA[] enemies =
+            FindObjectsByType<EnemyIA>(
+                FindObjectsSortMode.None
+            );
+
+        foreach (EnemyIA enemy in enemies)
+        {
+            enemy.DisableEnemy();
+        }
+
         StartCoroutine(ReturnToMenuRoutine());
     }
 
